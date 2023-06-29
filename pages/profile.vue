@@ -1,4 +1,14 @@
 <script setup>
+useHead({
+  title: "Amore | Profile",
+  meta: [
+    {
+      name: "description",
+      content: "Confess Your Secrets Here",
+    },
+  ],
+});
+
 definePageMeta({
   middleware: ["auth"],
 });

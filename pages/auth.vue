@@ -1,4 +1,13 @@
 <script setup lang="ts">
+useHead({
+  title: "Amore | Login",
+  meta: [
+    {
+      name: "description",
+      content: "Confess Your Secrets Here",
+    },
+  ],
+});
 const supabase = useSupabaseAuthClient();
 
 const login = async () => {

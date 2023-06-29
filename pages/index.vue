@@ -3,6 +3,16 @@ definePageMeta({
   middleware: ["auth"],
 });
 
+useHead({
+  title: "Amore | Confess",
+  meta: [
+    {
+      name: "description",
+      content: "Confess Your Secrets Here",
+    },
+  ],
+});
+
 const db = useSupabaseClient();
 const user = useSupabaseUser();
 
