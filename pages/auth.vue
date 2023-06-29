@@ -47,13 +47,5 @@ const loginGoogle = async () => {
 
       Sign In With Github
     </button>
-    <button
-      class="bg-[#262626] border-[#404040] border-[1px] flex flex-row items-center justify-center gap-1 text-white px-8 py-1 rounded-md"
-      @click="loginGoogle"
-    >
-      <Icon name="uil:google" color="grey" class="text-2xl" />
-
-      Sign In With Google
-    </button>
   </div>
 </template>
