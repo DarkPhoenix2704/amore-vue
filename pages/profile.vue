@@ -17,7 +17,7 @@ const user = useSupabaseUser();
 const { data, error } = await db
   .from("Profile")
   .select(`avatar_url, email, name`)
-  .eq("id", user.value!!.id);
+  .eq("id", user.value.id);
 if (error) {
   console.error(error);
   navigateTo("/auth");
@@ -26,7 +26,7 @@ if (error) {
 const confessions = await db
   .from("Confession")
   .select(`content, creator (avatar_url, email, name) `)
-  .eq("creator", user.value!!.id)
+  .eq("creator", user.value.id)
   .order("created_at", { ascending: false });
 if (confessions.error) {
   console.error(confessions.error);
