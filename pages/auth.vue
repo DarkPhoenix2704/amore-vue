@@ -18,19 +18,7 @@ const loginGithub = async () => {
   if (error) {
     console.error(error);
   } else {
-    navigateTo("/");
-  }
-};
-
-const loginGoogle = async () => {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
-  });
-
-  if (error) {
-    console.error(error);
-  } else {
-    navigateTo("/");
+    navigateTo("/profile");
   }
 };
 </script>

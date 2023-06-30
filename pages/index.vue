@@ -1,8 +1,4 @@
 <script setup>
-definePageMeta({
-  middleware: ["auth"],
-});
-
 useHead({
   title: "Amore | Confess",
   meta: [
@@ -44,7 +40,7 @@ const onSubmit = async () => {
 
 <template>
   <Navbar />
-  <form class="mt-8 flex" @submit="onSubmit">
+  <form v-if="user" class="mt-8 flex" @submit="onSubmit">
     <input
       class="w-full py-2 border-[#404040] border-r-[1px] rounded-l-md placeholder:text-neutral-500 outline-none bg-[#262626] px-3 text-md text-white"
       type="text"
@@ -58,6 +54,13 @@ const onSubmit = async () => {
       value="Confess"
     />
   </form>
+  <div
+    v-else
+    @click="navigateTo('/auth')"
+    class="text-white mt-4 p-2 rounded-md bg-neutral-800 flex"
+  >
+    Please Login to Confess
+  </div>
   <div class="flex items-center">
     <h1 class="text-white text-xl pb-1 mt-4">All Confessions</h1>
   </div>
