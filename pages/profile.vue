@@ -14,9 +14,12 @@ definePageMeta({
 });
 const db = useSupabaseClient();
 const user = useSupabaseUser();
-const { data, err } = await db.from("Profile").select().eq("id", user.value.id);
-if (err) {
-  console.error(err);
+const { data, error } = await db
+  .from("Profile")
+  .select()
+  .eq("id", user.value.id);
+if (error) {
+  console.error(error);
   navigateTo("/auth");
 }
 
@@ -25,8 +28,8 @@ const confessions = await db
   .select()
   .eq("creator", user.value.id)
   .order("created_at", { ascending: false });
-if (confessions.err) {
-  console.error(confessions.err);
+if (confessions.error) {
+  console.error(confessions.error);
   navigateTo("/auth");
 }
 </script>
